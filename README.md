@@ -40,13 +40,13 @@ If you already have existing SSL cert, you can use it. If you need to generate s
    ```
 5. Inspect the two files:
    ```
-   file myfile
-   file myfile.enc
+   file message
+   file message.enc
    ```
    You should see:
    ```
-   myfile: data
-   myfile.enc: openssl enc'd data with salted password
+   message: data
+   message.enc: openssl enc'd data with salted password
    ```
 6. Encrypt the random key with the public key:
    ```
