@@ -32,7 +32,7 @@ If you already have existing SSL cert, you can use it. If you need to generate s
    ```
 3. Generate a random key:
    ```
-   openssl rand -hex 64 -out bin.key
+   openssl rand -hex 64 > bin.key
    ```
 4. Encrypt the file using the randomly generated key:
    ```
