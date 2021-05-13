@@ -18,7 +18,13 @@ An example of a username, password, salt, and corresponding hash of the salt + p
 | admin    | fd2b46eef359 | password1234 | 176277e42364e34d72dec05a20f846524a264c14266d064e5ed39c96108bd5e2 |
 
 ### Generating SSL Keys
-If you already have existing SSL cert, you can use it. If you need to generate some, you can find an easy to follow tutorial [here](https://devcenter.heroku.com/articles/ssl-certificate-self). You may also use the keys included in this repository (located in the `ssl` directory), although they will expire eventually.
+If you already have existing SSL cert, you can use it. If you need to generate one, you can use the following commands. 
+```
+openssl genrsa -aes256 -passout pass:gsahdg -out server.pass.key 4096
+openssl rsa -passin pass:gsahdg -in server.pass.key -out server.key
+rm server.pass.key
+```
+You may also use the keys included in this repository (located in the `ssl` directory), although they will expire eventually.
 
 ### Encrypting
 
@@ -26,6 +32,7 @@ If you already have existing SSL cert, you can use it. If you need to generate s
    ```
    openssl rsa -in server.key -out publickey.pem -outform PEM -pubout
    ```
+   * If you get an error, you probably need to generate a key. See the Generating SSL Keys section above.
 2. Create a 10 MB file filled with random data:
    ```
    head -c 10485760 </dev/urandom >message
