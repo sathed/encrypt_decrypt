@@ -72,5 +72,18 @@ or
 ```
 man openssl
 ```
+**Hint**: Save your decrypted file as something other than `bin.key`. Then, you can compare the hashes of both files like so:
+
+Mac
+```
+shasum -a 256 /path/to/file
+shasum -a 256 /path/to/decrypted_file
+```
+
+Linux
+```
+sha256sum /path/to/file
+sha256sum /path/to/decrypted_file
+```
 
 Let me know if you get stuck!
