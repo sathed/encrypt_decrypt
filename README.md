@@ -16,6 +16,7 @@ An example of a username, password, salt, and corresponding hash of the salt + p
 | Username | Salt | Password | SHA256 Hash |
 | -------- | ---- | -------- | ----------- |
 | admin    | fd2b46eef359 | password1234 | 176277e42364e34d72dec05a20f846524a264c14266d064e5ed39c96108bd5e2 |
+| user1    | cu498e537der | password1234 | b76773467c12491069877ec3b16671fd9fa6d7c81decb2b2d98e0043b152fcb3 |
 
 ### Generating SSL Keys
 If you already have existing SSL cert, you can use it. If you need to generate one, you can use the following commands. 
